@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/ce79a11b95.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" placeholder="Name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-at"></i>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class = "forgot-password">
+                        <p>Lost password? <a href="login2.html">Click here!</a></p>
+                    </div>        
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signUpBtn" onclick="func()">Sign Up</button>
+                    <button type="button" id="signInBtn" class="disable">Sign In</button>
+                </div>
+               
+            </form>
+        </div>
+    <script>
+        function func(){
+            var name = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var pass = document.getElementById("password").value;
+            
+            if (name==value && email==value && pass==value){
+                alert("You have been successfully registered !")
+                window.location.assign("/food-website-main/assets/index.html")
+            }
+            else{
+                alert("wrong entry")
+            }
+        }
+    </script>
+        
+    <script>
+        let signUpBtn = document.getElementById("signUpBtn");
+        let signInBtn = document.getElementById("signInBtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+
+        signInBtn.onclick = function(){
+            nameField.style.maxHeight = "0";
+            title.innerHTML = "Sign In";
+            signUpBtn.classList.add("disable");
+            signInBtn.classList.remove("disable");
+        }
+
+        signUpBtn.onclick = function(){
+            nameField.style.maxHeight = "60px";
+            title.innerHTML = "Sign Up";
+            signUpBtn.classList.remove("disable");
+            signInBtn.classList.add("disable");
+        }
+    </script>
+    
+</body>
+</html>
